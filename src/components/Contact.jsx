@@ -10,8 +10,8 @@ const Contact = () => {
         <div
           className={`relative overflow-hidden rounded-3xl border p-8 text-center shadow-xl sm:p-12 transition-all duration-300 ${
             isDark
-              ? "border-cyan-500/20 bg-gradient-to-br from-cyan-950/30 via-slate-900 to-slate-950 shadow-cyan-950/30"
-              : "border-cyan-500/40 bg-gradient-to-br from-cyan-50/80 via-white to-slate-50 shadow-cyan-500/15"
+              ? "border-cyan-500/20 bg-linear-to-br from-cyan-950/30 via-slate-900 to-slate-950 shadow-cyan-950/30"
+              : "border-cyan-500/40 bg-linear-to-br from-cyan-50/80 via-white to-slate-50 shadow-cyan-500/15"
           }`}
         >
           <div className="inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-cyan-700 dark:text-cyan-400">

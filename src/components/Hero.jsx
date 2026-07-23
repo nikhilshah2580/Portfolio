@@ -45,11 +45,11 @@ function TypewriterRole() {
   }, [currentText, isDeleting, roleIndex]);
 
   return (
-    <span className="inline-flex items-center min-h-[2.5rem]">
+    <span className="inline-flex items-center min-h-10">
       <span
         className={`font-black ${
           isDark
-            ? "bg-gradient-to-r from-cyan-400 via-fuchsia-400 to-amber-300 bg-clip-text text-transparent"
+            ? "bg-linear-to-r from-cyan-400 via-fuchsia-400 to-amber-300 bg-clip-text text-transparent"
             : "text-cyan-700"
         }`}
       >
