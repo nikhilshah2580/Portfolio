@@ -7,9 +7,11 @@ import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import { ThemeProvider, useTheme } from "./context/ThemeContext";
 
-function App() {
+function MainContent() {
   const mainRef = useRef(null);
+  const { isDark } = useTheme();
 
   useEffect(() => {
     const elements = mainRef.current?.querySelectorAll("section");
@@ -35,8 +37,19 @@ function App() {
   }, []);
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-slate-950 text-slate-100">
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,rgba(6,182,212,0.12),transparent_30%)]" />
+    <div
+      className={`relative min-h-screen overflow-x-hidden transition-colors duration-300 ${
+        isDark ? "bg-slate-950 text-slate-100" : "bg-slate-50 text-slate-900"
+      }`}
+    >
+      {/* Background Glow Effect */}
+      <div
+        className={`pointer-events-none absolute inset-0 -z-10 transition-opacity duration-500 ${
+          isDark
+            ? "bg-[radial-gradient(circle_at_top,rgba(6,182,212,0.12),transparent_40%)]"
+            : "bg-[radial-gradient(circle_at_top,rgba(6,182,212,0.18),transparent_50%)]"
+        }`}
+      />
       <Navbar />
       <main ref={mainRef}>
         <Hero />
@@ -48,6 +61,14 @@ function App() {
       </main>
       <Footer />
     </div>
+  );
+}
+
+function App() {
+  return (
+    <ThemeProvider>
+      <MainContent />
+    </ThemeProvider>
   );
 }
 
