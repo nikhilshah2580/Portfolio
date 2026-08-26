@@ -3,21 +3,32 @@ import { useTheme } from "../context/ThemeContext";
 
 const projects = [
   {
-    title: "Mobile Repair System",
+    title: "Momo Fullstacks",
     description:
-      "Appointment booking system for user, and customer roles with a polished experience and secure workflows.",
-    stack: ["React.js", "Next.js", "Postgres", "Clerk"],
-  },
-  {
-    title: "ShoesMandu",
-    description:
-      "A complete ecommerce website with authentication, CRUD operations, and a modern UI powered by eclipse.",
-    stack: ["Java", "Tailwind CSS", "Vercel"],
-  },
-  {
-    title: "Momos",
-    description: "only frontend and work is going on",
+      "A full-stack food ordering experience with a polished interface and practical user flows.",
     stack: ["React", "Tailwind CSS", "Vercel"],
+    link: "https://momofullstacks.vercel.app/",
+  },
+  {
+    title: "Restaurant Frontend",
+    description:
+      "A responsive restaurant frontend focused on clear navigation, menu discovery, and a smooth ordering experience.",
+    stack: ["React", "Tailwind CSS", "Vercel"],
+    link: "https://restaurant-project-six-gamma.vercel.app/",
+  },
+  {
+    title: "Fixro Tech Mobile Repair",
+    description:
+      "A focused mobile repair website with service information, appointment booking, and a polished customer experience.",
+    stack: ["React.js", "Next.js", "Vercel"],
+    link: "https://fixro-tech-mobile-repair-website.vercel.app/",
+  },
+  {
+    title: "FullStack IT Training Management System",
+    description:
+      "A streamlined platform for managing IT training programs, learners, schedules, and progress.",
+    stack: ["React", "Tailwind CSS", "Vercel"],
+    link: "https://it-training-management-system.vercel.app/",
   },
 ];
 
@@ -40,8 +51,12 @@ const Projects = () => {
 
         <div className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
-            <div
+            <a
               key={project.title}
+              href={project.link}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`Open ${project.title}`}
               className={`group flex flex-col justify-between rounded-3xl border p-8 shadow-lg transition duration-300 hover:-translate-y-2 ${
                 isDark
                   ? "border-slate-800 bg-slate-900/70 shadow-black/20 hover:border-cyan-400/40"
@@ -89,7 +104,7 @@ const Projects = () => {
                   </span>
                 ))}
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>

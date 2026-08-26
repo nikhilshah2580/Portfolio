@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import { FiArrowRight, FiCheckCircle, FiCode, FiZap } from "react-icons/fi";
 import { useTheme } from "../context/ThemeContext";
+import myImage from "../assets/myimage.jpeg";
 
 const roles = [
-  "Frontend / Full Stack Developer",
-  "Software Developer",
-  "Java Developer",
-  "React & Next.js Specialist",
+  "Fullstack Developer",
+  "MERN Stack Developer",
 ];
 
 function TypewriterRole() {
@@ -84,7 +83,7 @@ function Hero() {
             <span>Welcome to my portfolio</span>
           </div>
 
-          <h1 className="text-4xl font-black tracking-tight sm:text-5xl lg:text-7xl">
+          <h1 className="animate-pulse text-4xl font-black tracking-tight sm:text-5xl lg:text-7xl">
             <span className="text-cyan-600 dark:text-cyan-300">Nikhil</span>{" "}
             <span className="text-fuchsia-600 dark:text-fuchsia-300">Raj</span>{" "}
             <span className="text-amber-600 dark:text-amber-300">Sah</span>
@@ -127,45 +126,61 @@ function Hero() {
           </div>
         </div>
 
-        {/* Right Info Card */}
-        <div
-          className={`rounded-3xl border p-8 shadow-2xl backdrop-blur transition duration-300 hover:-translate-y-1 ${
-            isDark
-              ? "border-slate-800 bg-slate-900/70 shadow-cyan-500/5 text-slate-100"
-              : "border-slate-300 bg-white shadow-slate-300/60 text-slate-950"
-          }`}
-        >
-          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-cyan-700 dark:text-cyan-400">
-            <span className="h-2 w-2 rounded-full bg-emerald-500 animate-ping" />
-            <span>Currently available for work</span>
+        <div className="space-y-8">
+          <div
+            className={`mx-auto aspect-square w-full max-w-md overflow-hidden rounded-full border-4 shadow-2xl transition duration-300 hover:-translate-y-1 ${
+              isDark
+                ? "border-slate-800 bg-slate-900/70 shadow-cyan-500/5"
+                : "border-slate-300 bg-white shadow-slate-300/60"
+            }`}
+          >
+            <img
+              src={myImage}
+              alt="Nikhil Raj Sah"
+              loading="eager"
+              className="h-full w-full object-cover object-[center_65%] animate-[hero-photo-enter_900ms_ease-out_both]"
+            />
           </div>
 
-          <h2
-            className={`mt-4 text-2xl font-black transition-colors ${
-              isDark ? "text-white" : "text-slate-950"
+          <div
+            className={`rounded-3xl border p-8 shadow-2xl backdrop-blur transition duration-300 hover:-translate-y-1 ${
+              isDark
+                ? "border-slate-800 bg-slate-900/70 shadow-cyan-500/5 text-slate-100"
+                : "border-slate-300 bg-white shadow-slate-300/60 text-slate-950"
             }`}
           >
-            I create fast, polished products for ambitious teams.
-          </h2>
+            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-cyan-700 dark:text-cyan-400">
+              <span className="h-2 w-2 rounded-full bg-emerald-500 animate-ping" />
+              <span>Currently available for work</span>
+            </div>
 
-          <ul
-            className={`mt-6 space-y-3 transition-colors ${
-              isDark ? "text-slate-300" : "text-slate-800 font-semibold"
-            }`}
-          >
-            <li className="flex items-start gap-2.5">
-              <FiCheckCircle className="mt-1 text-cyan-600 dark:text-cyan-400 shrink-0" />
-              <span>React, Next.js, TypeScript, and Tailwind workflows.</span>
-            </li>
-            <li className="flex items-start gap-2.5">
-              <FiCheckCircle className="mt-1 text-cyan-600 dark:text-cyan-400 shrink-0" />
-              <span>Responsive UI and optimized mobile performance.</span>
-            </li>
-            <li className="flex items-start gap-2.5">
-              <FiCheckCircle className="mt-1 text-cyan-600 dark:text-cyan-400 shrink-0" />
-              <span>Secure authentication and API-driven applications.</span>
-            </li>
-          </ul>
+            <h2
+              className={`mt-4 text-2xl font-black transition-colors ${
+                isDark ? "text-white" : "text-slate-950"
+              }`}
+            >
+              I create fast, polished products for ambitious teams.
+            </h2>
+
+            <ul
+              className={`mt-6 space-y-3 transition-colors ${
+                isDark ? "text-slate-300" : "text-slate-800 font-semibold"
+              }`}
+            >
+              <li className="flex items-start gap-2.5">
+                <FiCheckCircle className="mt-1 text-cyan-600 dark:text-cyan-400 shrink-0" />
+                <span>React, Next.js, TypeScript, and Tailwind workflows.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <FiCheckCircle className="mt-1 text-cyan-600 dark:text-cyan-400 shrink-0" />
+                <span>Responsive UI and optimized mobile performance.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <FiCheckCircle className="mt-1 text-cyan-600 dark:text-cyan-400 shrink-0" />
+                <span>Secure authentication and API-driven applications.</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
